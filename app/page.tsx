@@ -23,6 +23,7 @@ export default function HomePage() {
     };
 
     const handleTouchMove = (e: TouchEvent) => {
+      e.preventDefault();
       engage();
       const touch = e.touches[0];
       light.style.left = `${touch.clientX}px`;
@@ -30,7 +31,7 @@ export default function HomePage() {
     };
 
     window.addEventListener('mousemove', handleMouseMove);
-    window.addEventListener('touchmove', handleTouchMove, { passive: true });
+    window.addEventListener('touchmove', handleTouchMove, { passive: false });
 
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);

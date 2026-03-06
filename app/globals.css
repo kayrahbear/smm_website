@@ -103,6 +103,8 @@ a {
 /* Coming soon page */
 .coming-soon-bg {
   background: #0d1820;
+  touch-action: none;
+  overflow: hidden;
 }
 
 /* Flashlight effect */
