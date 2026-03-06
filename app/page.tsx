@@ -61,7 +61,7 @@ export default function HomePage() {
           href="https://docs.google.com/forms/d/e/1FAIpQLSfVbmWECdJlMfwPmechVDDhxWrZMbe53wAExYgtFNMpuvs4bQ/viewform"
           className="glow-button mb-8 rounded-full bg-[var(--pumpkin)] px-8 py-3 font-bold text-white"
         >
-          Join the launch list
+          Join the pre-order list
         </a>
 
       </div>
