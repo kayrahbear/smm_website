@@ -1,0 +1,68 @@
+name: Feature / New Page
+description: A new page, section, or piece of functionality to add to the site.
+title: "feat: "
+labels: ["enhancement"]
+body:
+  - type: input
+    id: summary
+    attributes:
+      label: What should be built?
+      placeholder: "e.g. Meet the Family interactive character page"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: type
+    attributes:
+      label: Type
+      options:
+        - New page
+        - New section on existing page
+        - Interactive feature
+        - Third-party integration
+        - SEO / metadata
+        - Performance
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What should this do? Who is it for? What problem does it solve?
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: How will we know this is done?
+      placeholder: |
+        - [ ] Visitor can click each character in the family illustration
+        - [ ] A panel opens with the character's name, bio, and fun fact
+        - [ ] Panel closes on click outside or on the X button
+        - [ ] Works on mobile
+    validations:
+      required: false
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options:
+        - High — needed for launch
+        - Medium — important but not blocking
+        - Low — nice to have
+    validations:
+      required: true
+
+  - type: textarea
+    id: content_needed
+    attributes:
+      label: Content or assets needed
+      description: What does Ashley need to provide before this can be built?
+      placeholder: "e.g. Character bios, family illustration file"
+    validations:
+      required: false

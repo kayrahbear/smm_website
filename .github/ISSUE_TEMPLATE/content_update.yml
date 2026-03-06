@@ -1,0 +1,65 @@
+name: Content Update
+description: New or updated text, images, or files provided by the client.
+title: "content: "
+labels: ["content"]
+body:
+  - type: input
+    id: summary
+    attributes:
+      label: What content is being added or changed?
+      placeholder: "e.g. Author bio and headshot for About page"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: page
+    attributes:
+      label: Which page does this affect?
+      options:
+        - Coming Soon (home)
+        - Meet the Family
+        - The Book
+        - About Ashley
+        - For Educators
+        - News & Events
+        - Newsletter
+        - Multiple pages
+        - New page (not yet built)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: content_type
+    attributes:
+      label: Content type
+      multiple: true
+      options:
+        - Body text / copy
+        - Author bio
+        - Book description
+        - Character bio
+        - Image or illustration
+        - Book cover
+        - Downloadable file (PDF, activity sheet)
+        - Event details
+        - Purchase links
+        - Social media links
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: content
+    attributes:
+      label: Content or instructions
+      description: Paste text directly here, or describe what has been provided and where to find it (e.g. shared Google Drive folder).
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional notes
+      description: Any formatting preferences, placement guidance, or things to watch out for.
+    validations:
+      required: false

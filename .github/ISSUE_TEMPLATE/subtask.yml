@@ -1,0 +1,56 @@
+name: Sub-task
+description: A discrete unit of work that belongs to a larger parent issue.
+title: "task: "
+labels: ["task"]
+body:
+  - type: input
+    id: parent
+    attributes:
+      label: Parent issue
+      description: Link to the parent issue this task belongs to.
+      placeholder: "#12"
+    validations:
+      required: true
+
+  - type: input
+    id: summary
+    attributes:
+      label: What needs to be done?
+      placeholder: "e.g. Build character modal component"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Details
+      description: Specific implementation notes, constraints, or context.
+    validations:
+      required: false
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Done when
+      placeholder: |
+        - [ ] Component renders correctly on desktop and mobile
+        - [ ] Clicking outside the modal closes it
+        - [ ] Accessible via keyboard (Escape to close)
+    validations:
+      required: false
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Frontend — layout / UI
+        - Frontend — interactivity
+        - Frontend — styling
+        - Content — copy
+        - Content — assets
+        - Infrastructure / deployment
+        - SEO / analytics
+        - Other
+    validations:
+      required: true
