@@ -53,16 +53,12 @@ export default function HomePage() {
         <span className="mb-8 inline-block rounded-full border border-[var(--pumpkin)]/40 px-5 py-2 text-xs font-bold uppercase tracking-[0.3em] text-[var(--pumpkin)]">
           Coming Soon
         </span>
-        {/* <p className="text-sm italic text-[var(--moon)]/40">
-          The mystery begins soon.
-        </p> */}
-
-        {/* <a
+        <a
           href="mailto:hello@ashleybrewerbooks.com?subject=Savannah%20Manor%20launch%20list"
           className="glow-button mb-8 rounded-full bg-[var(--pumpkin)] px-8 py-3 font-bold text-white"
         >
           Join the launch list
-        </a> */}
+        </a>
 
       </div>
 
