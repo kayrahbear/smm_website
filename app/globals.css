@@ -100,6 +100,41 @@ a {
   box-shadow: 0 10px 30px rgba(255, 227, 176, 0.24);
 }
 
+/* Coming soon page */
+.coming-soon-bg {
+  background: #0d1820;
+}
+
+/* Flashlight effect */
+.flashlight {
+  position: fixed;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 100vmax rgba(8, 14, 22, 0.94);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 20;
+  left: 50%;
+  top: 50%;
+  background: radial-gradient(circle, rgba(255, 245, 200, 0.06) 0%, transparent 70%);
+}
+
+.flashlight:not(.drifting) {
+  transition: left 40ms linear, top 40ms linear;
+}
+
+@keyframes drift {
+  0%,  100% { left: 30%; top: 45%; }
+  30%        { left: 65%; top: 30%; }
+  60%        { left: 55%; top: 65%; }
+  80%        { left: 38%; top: 58%; }
+}
+
+.flashlight.drifting {
+  animation: drift 14s ease-in-out infinite;
+}
+
 .texture-dots {
   background-image:
     radial-gradient(rgba(255,255,255,0.12) 0.8px, transparent 0.8px),
