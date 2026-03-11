@@ -49,8 +49,30 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ══ FOOTER ══ */}
+      {/* ── FOOTER ── */}
       <footer className="hm-footer">
+        <div className="hm-footer-social">
+          <a
+            href="https://www.instagram.com/thesavannahmanor"
+            className="hm-social-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/images/instagram.svg" alt="" className="hm-social-icon" />
+          </a>
+          <a
+            href="https://www.facebook.com/profile.php?id=61582239860105"
+            className="hm-social-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/images/facebook.svg" alt="" className="hm-social-icon" />
+          </a>
+        </div>
         <p>© 2026 Ashley Brewer Books &nbsp;·&nbsp; All rights reserved</p>
       </footer>
 
