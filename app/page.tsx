@@ -45,7 +45,7 @@ export default function HomePage() {
               Because at Savannah Manor&hellip; every mystery is just waiting to be solved.
             </p>
             <a
-              href="books/the-great-ghost-mystery"
+              href="books/the-great-ghost-mixup"
               className="hm-btn-dark"
             >
               Learn more about our latest mystery - The Great Ghost Mixup
