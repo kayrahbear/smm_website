@@ -16,6 +16,28 @@ export default function HomePage() {
           <p className="hm-tagline">
             At the old farmhouse at the end of the long, twisty road, mysteries are always popping up!
           </p>
+          <div className="hm-hero-social">
+            <a
+              href="https://www.instagram.com/thesavannahmanor"
+              className="hm-social-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/images/instagram.svg" alt="" className="hm-social-icon" />
+            </a>
+            <a
+              href="https://www.facebook.com/profile.php?id=61582239860105"
+              className="hm-social-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/images/facebook.svg" alt="" className="hm-social-icon" />
+            </a>
+          </div>
           <a
             href="https://docs.google.com/forms/d/e/1FAIpQLSfVbmWECdJlMfwPmechVDDhxWrZMbe53wAExYgtFNMpuvs4bQ/viewform"
             className="hm-btn-primary"
@@ -94,6 +116,28 @@ export default function HomePage() {
 
       {/* ── FOOTER ── */}
       <footer className="hm-footer">
+        <div className="hm-footer-social">
+          <a
+            href="https://www.instagram.com/thesavannahmanor"
+            className="hm-social-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/images/instagram.svg" alt="" className="hm-social-icon" />
+          </a>
+          <a
+            href="https://www.facebook.com/profile.php?id=61582239860105"
+            className="hm-social-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/images/facebook.svg" alt="" className="hm-social-icon" />
+          </a>
+        </div>
         <p>© 2026 Ashley Brewer Books &nbsp;·&nbsp; All rights reserved</p>
       </footer>
 

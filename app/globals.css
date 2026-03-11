@@ -457,6 +457,12 @@ a {
   max-width: 520px;
 }
 
+.hm-hero-social {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
 .hm-btn-primary {
   display: inline-flex;
   align-items: center;
@@ -681,6 +687,40 @@ a {
   font-family: var(--font-quicksand), sans-serif;
   font-size: 0.78rem;
   color: rgba(155, 167, 174, 0.5);
+}
+
+.hm-footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+  margin-bottom: 0.85rem;
+}
+
+.hm-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(155, 167, 174, 0.1);
+  transition: background 0.18s ease, transform 0.18s ease;
+}
+
+.hm-social-link:hover {
+  background: rgba(227, 122, 47, 0.25);
+  transform: translateY(-2px);
+}
+
+.hm-social-icon {
+  width: 18px;
+  height: 18px;
+  filter: invert(80%) sepia(5%) saturate(400%) hue-rotate(170deg) brightness(90%);
+  transition: filter 0.18s ease;
+}
+
+.hm-social-link:hover .hm-social-icon {
+  filter: invert(62%) sepia(60%) saturate(600%) hue-rotate(340deg) brightness(105%);
 }
 
 /* ── Responsive ── */
