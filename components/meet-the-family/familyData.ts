@@ -46,7 +46,7 @@ export const familyMembers: CharacterData[] = [
   {
     id: 'smokey',
     name: 'Smokey',
-    imageSrc: '/images/characters/Smokey.png',
+    imageSrc: '/images/characters/Smokey.webp',
     imageAlt: 'Smokey the Savannah cat',
     role: 'Head Detective (Self-Proclaimed)',
     bio: 'Smokey is the clever Savannah cat who considers himself the real head detective of Savannah Manor. With his watchful eyes, climbing skills, and nose for trouble, Smokey is always the first to notice when something mysterious is going on.',
@@ -63,7 +63,7 @@ export const familyMembers: CharacterData[] = [
   {
     id: 'dad',
     name: 'Dad',
-    imageSrc: '/images/characters/Dad.png',
+    imageSrc: '/images/characters/Dad.webp',
     imageAlt: 'Dad',
     role: 'Ready for Adventure',
     bio: 'Dad is always ready for an adventure around the farmhouse and loves hearing about the detectives\u2019 latest mystery. Even when the clues get strange, he knows the Savannah Manor crew will solve it together.',
@@ -79,7 +79,7 @@ export const familyMembers: CharacterData[] = [
   {
     id: 'mom',
     name: 'Mom',
-    imageSrc: '/images/characters/Mom.png',
+    imageSrc: '/images/characters/Mom.webp',
     imageAlt: 'Mom',
     role: 'Keeper of the Manor',
     bio: 'Mom keeps Savannah Manor running and always has a warm hug ready after a long day of adventures. She may not always believe the house is full of mysteries\u2026 but she knows the kids and cats will figure things out.',
