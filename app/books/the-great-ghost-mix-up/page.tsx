@@ -76,7 +76,7 @@ export default function GreatGhostMixUpPage() {
             <div className="bk-peek-frame bk-peek-frame--spread">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/images/book_content/peek_inside.jpeg"
+                src="/images/book_content/peek_inside.webp"
                 alt="Interior spread from The Great Ghost Mix Up"
                 className="bk-peek-img"
               />

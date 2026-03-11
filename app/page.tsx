@@ -54,7 +54,7 @@ export default function HomePage() {
 
           <div className="hm-about-visual">
             <img
-              src="images/book_content/worldscutestdetectives.jpg"
+              src="images/book_content/worldscutestdetectives.webp"
               alt="The Savannah Manor Detectives Are On The Case"
               className="hm-book-img"
             />
