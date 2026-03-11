@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
-import { Fredoka, Quicksand } from 'next/font/google';
+import { Playpen_Sans, Quicksand } from 'next/font/google';
+import SiteHeader from '@/components/SiteHeader';
 import './globals.css';
 
-const fredoka = Fredoka({
+const playpenSans = Playpen_Sans({
   subsets: ['latin'],
   variable: '--font-fredoka',
   display: 'swap',
@@ -21,8 +22,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${fredoka.variable} ${quicksand.variable}`}>
-      <body>{children}</body>
+    <html lang="en" className={`${playpenSans.variable} ${quicksand.variable}`}>
+      <body>
+        <SiteHeader />
+        {children}
+      </body>
     </html>
   );
 }
