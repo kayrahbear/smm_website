@@ -39,10 +39,10 @@ export default function HomePage() {
             </a>
           </div>
           <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLSfVbmWECdJlMfwPmechVDDhxWrZMbe53wAExYgtFNMpuvs4bQ/viewform"
+            href="/order"
             className="hm-btn-primary"
           >
-            Preorder the Great Ghost Mixup
+            Order The Great Ghost Mix Up
           </a>
         </div>
       </section>
@@ -67,7 +67,7 @@ export default function HomePage() {
               Because at Savannah Manor&hellip; every mystery is just waiting to be solved.
             </p>
             <a
-              href="books/the-great-ghost-mix-up"
+              href="/books/the-great-ghost-mix-up"
               className="hm-btn-dark"
             >
               Learn more about our latest mystery - The Great Ghost Mixup
@@ -76,7 +76,7 @@ export default function HomePage() {
 
           <div className="hm-about-visual">
             <img
-              src="images/book_content/worldscutestdetectives.webp"
+              src="/images/book_content/worldscutestdetectives.webp"
               alt="The Savannah Manor Detectives Are On The Case"
               className="hm-book-img"
             />

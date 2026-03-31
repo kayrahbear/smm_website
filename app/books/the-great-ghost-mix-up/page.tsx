@@ -49,10 +49,10 @@ export default function GreatGhostMixUpPage() {
             </div>
 
             <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSfVbmWECdJlMfwPmechVDDhxWrZMbe53wAExYgtFNMpuvs4bQ/viewform"
+              href="/order"
               className="bk-btn-primary"
             >
-              Join the Preorder List
+              Order Your Copy
             </a>
           </div>
 
@@ -126,15 +126,15 @@ export default function GreatGhostMixUpPage() {
       {/* ══ CTA ══ */}
       <section className="bk-cta">
         <div className="bk-cta-inner">
-          <h2 className="bk-cta-heading">Join the Launch List</h2>
+          <h2 className="bk-cta-heading">Available Now</h2>
           <p className="bk-cta-body">
-            Be the first to know when <em>The Great Ghost Mix Up</em> is available.
+            <em>The Great Ghost Mix Up</em> is here &mdash; $19.99 with free shipping.
           </p>
           <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLSfVbmWECdJlMfwPmechVDDhxWrZMbe53wAExYgtFNMpuvs4bQ/viewform"
+            href="/order"
             className="bk-btn-primary"
           >
-            Sign Me Up
+            Order Your Copy
           </a>
         </div>
       </section>
