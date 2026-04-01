@@ -128,7 +128,7 @@ export default function GreatGhostMixUpPage() {
         <div className="bk-cta-inner">
           <h2 className="bk-cta-heading">Available Now</h2>
           <p className="bk-cta-body">
-            <em>The Great Ghost Mix Up</em> is here &mdash; $19.99 with free shipping.
+            <em>The Great Ghost Mix Up</em> is here &mdash; $14.99 per book + $5 flat shipping.
           </p>
           <a
             href="/order"

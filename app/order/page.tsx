@@ -1,12 +1,15 @@
 import type { Metadata } from 'next';
+import OrderForm from '@/components/OrderForm';
 
 export const metadata: Metadata = {
   title: 'Order Your Copy | The Great Ghost Mix Up | Savannah Manor Mysteries',
   description:
-    'Order The Great Ghost Mix Up — Book One of the Savannah Manor Mysteries by Ashley Brewer. $19.99 with free shipping.',
+    'Order The Great Ghost Mix Up — Book One of the Savannah Manor Mysteries by Ashley Brewer. $14.99 per book + $5 flat shipping.',
 };
 
 export default function OrderPage() {
+  const clientId = process.env.PAYPAL_CLIENT_ID ?? '';
+
   return (
     <main className="or-root">
 
@@ -33,8 +36,8 @@ export default function OrderPage() {
             <h1 className="or-title">The Great<br />Ghost Mix Up</h1>
 
             <div className="or-price-badge">
-              <span className="or-price">$19.99</span>
-              <span className="or-price-note">shipping included</span>
+              <span className="or-price">$14.99</span>
+              <span className="or-price-note">per book &middot; $5 flat shipping</span>
             </div>
 
             <p className="or-blurb">
@@ -43,40 +46,13 @@ export default function OrderPage() {
               fails&hellip; and a mysterious white blur races through the halls.
             </p>
 
-            <div className="or-payment-options">
-              <a
-                href="https://checkout.square.site/merchant/MLVE8TP7KVSYG/checkout/EVPPLLMM2VWUHRWKG7OGVK5U"
-                className="or-pay-btn or-pay-btn--square"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <svg className="or-pay-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" strokeWidth="1.8" />
-                  <rect x="9" y="9" width="6" height="6" rx="1" stroke="currentColor" strokeWidth="1.8" />
-                </svg>
-                Pay with Square
-                <span className="sr-only"> (opens in new tab)</span>
-              </a>
-              <a
-                href="https://www.paypal.com/invoice/p/#INV2-YKET-K4AH-4J28-XK6B"
-                className="or-pay-btn or-pay-btn--paypal"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <svg className="or-pay-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M7.5 21L8.5 15H5.5C4.5 15 4 14.2 4.3 13.3L7.3 4.3C7.5 3.5 8.3 3 9.2 3H14.5C16.5 3 18 4.5 17.5 6.5L17 8.5C16.5 10.5 14.5 12 12.5 12H10.5L9 18C8.8 19 8 19.5 7.5 21Z" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-                  <path d="M11 12H14C16 12 17.5 10.5 18 8.5L18.5 6.5C19 4.5 20.5 3 22.5 3" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" opacity="0.5" />
-                </svg>
-                Pay with PayPal
-                <span className="sr-only"> (opens in new tab)</span>
-              </a>
-            </div>
+            <OrderForm clientId={clientId} />
 
             <p className="or-secure-note">
               <svg className="or-lock-icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
                 <path d="M8 1a3.5 3.5 0 0 0-3.5 3.5V6H4a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1h-.5V4.5A3.5 3.5 0 0 0 8 1Zm2 5H6V4.5a2 2 0 1 1 4 0V6Z" />
               </svg>
-              Secure checkout &middot; You&rsquo;ll complete payment on the provider&rsquo;s site
+              Secure checkout powered by PayPal
             </p>
           </div>
         </div>
