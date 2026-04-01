@@ -10,6 +10,7 @@ export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
     const quantity = Number(body.quantity);
+    const isTest = body.test === true;
 
     if (!Number.isInteger(quantity) || quantity < 1 || quantity > MAX_QTY) {
       return NextResponse.json(
@@ -18,9 +19,14 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const itemTotal = (BOOK_PRICE * quantity).toFixed(2);
-    const shipping = SHIPPING_FLAT.toFixed(2);
-    const total = (BOOK_PRICE * quantity + SHIPPING_FLAT).toFixed(2);
+    const unitPrice = isTest ? 1.0 : BOOK_PRICE;
+    const shippingCost = isTest ? 0 : SHIPPING_FLAT;
+    const itemTotal = (unitPrice * quantity).toFixed(2);
+    const shipping = shippingCost.toFixed(2);
+    const total = (unitPrice * quantity + shippingCost).toFixed(2);
+    const itemName = isTest
+      ? 'TEST — The Great Ghost Mix Up'
+      : 'The Great Ghost Mix Up';
 
     const { result } = await getOrdersController().createOrder({
       body: {
@@ -35,12 +41,12 @@ export async function POST(request: NextRequest) {
                 shipping: { currencyCode: 'USD', value: shipping },
               },
             },
-            description: `The Great Ghost Mix Up x${quantity}`,
+            description: `${itemName} x${quantity}`,
             items: [
               {
-                name: 'The Great Ghost Mix Up',
+                name: itemName,
                 description: 'Savannah Manor Mysteries — Book 1',
-                unitAmount: { currencyCode: 'USD', value: BOOK_PRICE.toFixed(2) },
+                unitAmount: { currencyCode: 'USD', value: unitPrice.toFixed(2) },
                 quantity: String(quantity),
               },
             ],

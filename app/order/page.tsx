@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Suspense } from 'react';
 import OrderForm from '@/components/OrderForm';
 
 export const metadata: Metadata = {
@@ -46,7 +47,9 @@ export default function OrderPage() {
               fails&hellip; and a mysterious white blur races through the halls.
             </p>
 
-            <OrderForm clientId={clientId} />
+            <Suspense>
+              <OrderForm clientId={clientId} />
+            </Suspense>
 
             <p className="or-secure-note">
               <svg className="or-lock-icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">

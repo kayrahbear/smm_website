@@ -1,9 +1,11 @@
 'use client';
 
 import { useEffect, useRef, useState, useCallback } from 'react';
+import { useSearchParams } from 'next/navigation';
 
 const BOOK_PRICE = 14.99;
 const SHIPPING_FLAT = 5.0;
+const TEST_PRICE = 1.0;
 const MAX_QTY = 5;
 
 type CheckoutStatus = 'idle' | 'loading' | 'success' | 'error';
@@ -28,15 +30,21 @@ interface OrderFormProps {
 }
 
 export default function OrderForm({ clientId }: OrderFormProps) {
+  const searchParams = useSearchParams();
+  const isTest = searchParams.get('test') === '1';
+
   const [quantity, setQuantity] = useState(1);
   const [status, setStatus] = useState<CheckoutStatus>('idle');
   const [errorMessage, setErrorMessage] = useState('');
   const containerRef = useRef<HTMLDivElement>(null);
   const renderedRef = useRef(false);
   const quantityRef = useRef(quantity);
+  const testRef = useRef(isTest);
 
-  const subtotal = BOOK_PRICE * quantity;
-  const total = subtotal + SHIPPING_FLAT;
+  const unitPrice = isTest ? TEST_PRICE : BOOK_PRICE;
+  const shippingCost = isTest ? 0 : SHIPPING_FLAT;
+  const subtotal = unitPrice * quantity;
+  const total = subtotal + shippingCost;
 
   // Keep ref in sync so the PayPal callback always reads the latest quantity
   useEffect(() => {
@@ -90,7 +98,10 @@ export default function OrderForm({ clientId }: OrderFormProps) {
             const res = await fetch('/api/orders', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ quantity: quantityRef.current }),
+              body: JSON.stringify({
+                quantity: quantityRef.current,
+                test: testRef.current,
+              }),
             });
             const data = await res.json();
 
@@ -189,10 +200,12 @@ export default function OrderForm({ clientId }: OrderFormProps) {
           </span>
           <span>${subtotal.toFixed(2)}</span>
         </div>
-        <div className="or-summary-line">
-          <span>Shipping</span>
-          <span>${SHIPPING_FLAT.toFixed(2)}</span>
-        </div>
+        {shippingCost > 0 && (
+          <div className="or-summary-line">
+            <span>Shipping</span>
+            <span>${shippingCost.toFixed(2)}</span>
+          </div>
+        )}
         <div className="or-summary-line or-summary-total">
           <span>Total</span>
           <span>${total.toFixed(2)}</span>
