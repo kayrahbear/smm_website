@@ -6,6 +6,8 @@ frontend:
         - npm ci
     build:
       commands:
+        - echo "PAYPAL_CLIENT_ID=$PAYPAL_CLIENT_ID" >> .env.production
+        - echo "PAYPAL_CLIENT_SECRET=$PAYPAL_CLIENT_SECRET" >> .env.production
         - npm run build
   artifacts:
     baseDirectory: .next
