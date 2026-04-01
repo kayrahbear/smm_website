@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { ordersController } from '@/lib/paypal';
+import { getOrdersController } from '@/lib/paypal';
 
 export async function POST(
   _request: Request,
@@ -8,7 +8,7 @@ export async function POST(
   const { orderID } = await params;
 
   try {
-    const { result } = await ordersController.captureOrder({
+    const { result } = await getOrdersController().captureOrder({
       id: orderID,
       prefer: 'return=minimal',
     });

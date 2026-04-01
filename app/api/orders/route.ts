@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { CheckoutPaymentIntent } from '@paypal/paypal-server-sdk';
-import { ordersController } from '@/lib/paypal';
+import { getOrdersController } from '@/lib/paypal';
 
 const BOOK_PRICE = 14.99;
 const SHIPPING_FLAT = 5.0;
@@ -22,7 +22,7 @@ export async function POST(request: NextRequest) {
     const shipping = SHIPPING_FLAT.toFixed(2);
     const total = (BOOK_PRICE * quantity + SHIPPING_FLAT).toFixed(2);
 
-    const { result } = await ordersController.createOrder({
+    const { result } = await getOrdersController().createOrder({
       body: {
         intent: CheckoutPaymentIntent.Capture,
         purchaseUnits: [
