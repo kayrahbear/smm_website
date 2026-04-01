@@ -18,7 +18,7 @@ const client = new Client({
     oAuthClientId: clientId,
     oAuthClientSecret: clientSecret,
   },
-  environment: Environment.Sandbox,
+  environment: Environment.Production,
 });
 
 export const ordersController = new OrdersController(client);
