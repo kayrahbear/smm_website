@@ -64,7 +64,7 @@ export default function OrderForm({ clientId }: OrderFormProps) {
     }
 
     const script = document.createElement('script');
-    script.src = `https://www.paypal.com/sdk/js?client-id=${clientId}&currency=USD&components=buttons&enable-funding=venmo,card`;
+    script.src = `https://www.paypal.com/sdk/js?client-id=${clientId}&currency=USD&components=buttons&enable-funding=venmo,card&disable-funding=paylater`;
     script.setAttribute('data-sdk-integration-source', 'developer-studio');
     script.async = true;
     script.onload = renderButtons;
