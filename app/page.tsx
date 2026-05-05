@@ -138,7 +138,7 @@ export default function HomePage() {
             <img src="/images/facebook.svg" alt="" className="hm-social-icon" />
           </a>
         </div>
-        <p>© 2026 Ashley Brewer Books &nbsp;·&nbsp; All rights reserved</p>
+        <p>© 2026 Ashley Brewer Books &nbsp;·&nbsp; All rights reserved &nbsp;·&nbsp; Website By <a href="https://kayrahbear.github.io/" target="_blank">GingerHouse</a></p>
       </footer>
 
     </main>
